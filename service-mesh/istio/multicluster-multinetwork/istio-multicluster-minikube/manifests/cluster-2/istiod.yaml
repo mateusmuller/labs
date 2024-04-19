@@ -1,0 +1,16 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  meshConfig:
+    accessLogFile: /dev/stdout
+  #   serviceSettings:
+  #   - settings:
+  #       clusterLocal: true
+  #     hosts:
+  #     - "*"
+  values:
+    global:
+      meshID: mesh1
+      multiCluster:
+        clusterName: cluster-2
+      network: network2
