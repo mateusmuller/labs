@@ -51,13 +51,13 @@ install-gateway:
 		--cluster $(CLUSTER1_NAME) \
 		--network network1 |\
 		istioctl install \
-			--context=$(CLUSTER1_NAME) -y -f -
+		--context=$(CLUSTER1_NAME) -y -f -
 	@bash scripts/gen-eastwest-gateway.sh \
 		--mesh mesh1 \
 		--cluster $(CLUSTER2_NAME) \
 		--network network2 |\
 		istioctl install \
-			--context=$(CLUSTER2_NAME) -y -f -
+		--context=$(CLUSTER2_NAME) -y -f -
 	@kubectl apply -f manifests/gateway.yaml --context $(CLUSTER1_NAME)
 	@kubectl apply -f manifests/gateway.yaml --context $(CLUSTER2_NAME)
 
